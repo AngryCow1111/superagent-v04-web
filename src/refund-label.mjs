@@ -1,3 +1,10 @@
+const STATUS_LABELS = {
+  refund_pending: '退款处理中'
+};
+
 export function refundLabel(payload) {
-  return payload.status;
+  if (!payload) {
+    return '';
+  }
+  return STATUS_LABELS[payload.status] || payload.status;
 }
